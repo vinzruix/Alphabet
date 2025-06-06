@@ -1,0 +1,11 @@
+{
+  "name": "typescript-alphabet-analyzer",
+  "version": "1.0.0",
+  "description": "Analizador de alfabeto en TypeScript - Solo Navegador",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
