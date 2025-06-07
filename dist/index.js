@@ -17,7 +17,8 @@ function counter(chain, character) {
 function alphabet(chain) {
     let res = "";
     for (let i = 0; i < chain.length; i++) {
-        if (counter(chain, chain.toLowerCase().charAt(i)) < 2 || counter(res, chain.toLowerCase().charAt(i)) == 0) {
+        if (counter(chain, chain.toLowerCase().charAt(i)) < 2
+            || counter(res, chain.toLowerCase().charAt(i)) == 0) {
             res += chain.toLowerCase().charAt(i);
         }
     }
@@ -43,17 +44,21 @@ function alphabetFormated(chain) {
     }
     return "{ " + alpha + " }";
 }
+const text = "TE";
+console.log("El texto el cual se obtendra su alfabeto es:" + text);
+console.log(alphabetFormated(text));
+;
 function alphabetVerification(chain, alphabet) {
     for (let i = 0; i < chain.length; i++) {
-        if (counter(alphabet, chain.charAt(i)) <= 0) {
+        if (counter(alphabet, chain.toLocaleLowerCase().charAt(i)) <= 0) {
             return "Incorrecto!!!!";
         }
     }
     return "Correcto!!!!!";
 }
-const text = "23TE0288";
-console.log(alphabetFormated(text));
-console.log(alphabetVerification("z", alphabet(text)));
+const textComprobation = "TE";
+console.log("Se comprobara si el texto: " + textComprobation + " \npertenece al mismo alfabeto...");
+console.log(alphabetVerification(textComprobation, alphabet(text)));
 function printAlphabet() {
     const txt = alphabetFormated(chainText.value);
     printValue.textContent = txt;
@@ -65,4 +70,5 @@ function printverifiedAlphabet() {
 }
 printButton.addEventListener("click", printAlphabet);
 printButtonVerify.addEventListener("click", printverifiedAlphabet);
+console.log("PSOPDSA");
 //# sourceMappingURL=index.js.map
